@@ -1,10 +1,20 @@
-.output {
-    margin: 0;
-    text-align: right;
-    font-size: 3rem;
-}
+.row {
+    flex-grow: 1;
 
-.output__mini {
-    text-align: right;
-    color: #fffa;
+    &.screen {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+    .output {
+        margin: 0;
+        text-align: right;
+        font-size: 3rem;
+    }
+
+    .output__mini {
+        text-align: right;
+        color: #fffa;
+    }
 }

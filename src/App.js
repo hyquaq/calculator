@@ -56,8 +56,8 @@ function App() {
     const isClear = valueButton === "<-";
     const dot = valueButton === "." && !isDot;
     const isOperator = ["+", "-", "x", "/", "%"].indexOf(valueButton) !== -1;
-
     const isEqual = valueButton === "=";
+    const isNegative = valueButton === "+/-";
 
     isEqual && operator !== "" && handleCompute();
 
@@ -68,6 +68,8 @@ function App() {
     isNumber &&
       isDot &&
       setCurrentValue((pre) => parseFloat(`${pre}.${valueButton}`));
+
+    isNegative && setCurrentValue((pre) => pre * -1);
 
     isClearAll &&
       setCurrentValue(() => {
@@ -91,7 +93,7 @@ function App() {
 
   return (
     <section className="container-fuild">
-      <div className="row">
+      <div className="row screen">
         <Screen value={currentValue} preValue={preValue} operator={operator} />
       </div>
       <div className="row number-pad">
@@ -102,10 +104,18 @@ function App() {
           <span className="col" onClick={handleClick} value="+/-">
             +/-
           </span>
-          <span className="col" onClick={handleClick} value="%">
+          <span
+            className={operator === "%" ? "col active" : "col"}
+            onClick={handleClick}
+            value="%"
+          >
             %
           </span>
-          <span className="col" onClick={handleClick} value="/">
+          <span
+            className={operator === "/" ? "col active" : "col"}
+            onClick={handleClick}
+            value="/"
+          >
             /
           </span>
         </div>
@@ -119,7 +129,11 @@ function App() {
           <span className="col" onClick={handleClick} value="9">
             9
           </span>
-          <span className="col" onClick={handleClick} value="x">
+          <span
+            className={operator === "x" ? "col active" : "col"}
+            onClick={handleClick}
+            value="x"
+          >
             x
           </span>
         </div>
@@ -133,7 +147,11 @@ function App() {
           <span className="col" onClick={handleClick} value="6">
             6
           </span>
-          <span className="col" onClick={handleClick} value="-">
+          <span
+            className={operator === "-" ? "col active" : "col"}
+            onClick={handleClick}
+            value="-"
+          >
             -
           </span>
         </div>
@@ -147,7 +165,11 @@ function App() {
           <span className="col" onClick={handleClick} value="3">
             3
           </span>
-          <span className="col" onClick={handleClick} value="+">
+          <span
+            className={operator === "+" ? "col active" : "col"}
+            onClick={handleClick}
+            value="+"
+          >
             +
           </span>
         </div>
