@@ -1,0 +1,13 @@
+body {
+    header {
+        --height-header: 50px;
+        --width-header: 100%;
+        --size-menu: 30px;
+    }
+    #contact {
+        a {
+            --size-brand: 4rem;
+            --gap-social: 1rem;
+        }
+    }
+}

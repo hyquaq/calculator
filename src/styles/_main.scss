@@ -1,0 +1,26 @@
+.row.number-pad {
+    --gap-number: 0.5rem;
+    gap: var(--gap-number);
+    .row {
+        gap: var(--gap-number);
+        .col {
+            text-align: center;
+            border-radius: 10px;
+            background-color: #374353ee;
+            padding: 1rem;
+            cursor: pointer;
+            color: #fffa;
+            box-shadow: -2px -2px 2px #fffa;
+            &:hover {
+                color: #ffff;
+                background-color: #374353ff;
+                font-weight: bolder;
+            }
+
+            &.disable {
+                pointer-events: none;
+                box-shadow: -2px -2px 2px #f00a;
+            }
+        }
+    }
+}

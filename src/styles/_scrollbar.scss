@@ -1,0 +1,29 @@
+::-webkit-scrollbar {
+  /* 1 */
+  width: 12px;
+  //   border-radius: 10px;
+  background-color: #2d2e30;
+}
+::-webkit-scrollbar-button {
+  /* 2 */
+  display: none;
+}
+::-webkit-scrollbar-track {
+  /* 3 */
+}
+::-webkit-scrollbar-track-piece {
+  /* 4 */
+}
+::-webkit-scrollbar-thumb {
+  /* 5 */
+  border: 2px solid #2d2e30;
+  margin: 0 auto;
+  background-color: #5f6368;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-corner {
+  /* 6 */
+}
+::-webkit-resizer {
+  /* 7 */
+}
